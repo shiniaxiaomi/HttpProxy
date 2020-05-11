@@ -1,8 +1,5 @@
 import java.io.*;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.net.URL;
-import java.net.URLConnection;
+import java.net.*;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -74,8 +71,8 @@ public class HttpProxy {
                         responseHeader.append(": ");
                         responseHeader.append(fields.get(0));
                         for(int index=1;index<fields.size();index++){
-                            responseHeader.append(fields.get(index));
                             responseHeader.append(";");
+                            responseHeader.append(fields.get(index));
                         }
                         responseHeader.append("\r\n");
                     }
